@@ -10,13 +10,16 @@ const sanitizeAttributes = (data = {}, customFieldsToHide) => {
 }
 
 const sanitizeArray = (data = []) => {
-  return data.map((item) => {
+  const arr = Array.isArray(data) ? data : [];
+
+  return arr.map((item) => {
     return {
       id: item.id,
       ...sanitizeAttributes(item.attributes)
     }
   })
 }
+
 const sanitizeObject = (data = {}) => {
   return {
     id: data.id,

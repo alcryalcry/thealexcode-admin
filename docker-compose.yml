@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  admin:
+    build: .
+    image: thealexcode/admin
+    restart: always
+    ports:
+      - '1337:1337'
+    volumes:
+      - ./.tmp:/opt/app/.tmp
+      - ./config:/opt/app/config
+      - ./src:/opt/app/src
+      - ./package.json:/opt/package.json
+      - ./yarn.lock:/opt/yarn.lock
+      - ./.env:/opt/app/.env

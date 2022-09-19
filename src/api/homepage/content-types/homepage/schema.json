@@ -28,6 +28,19 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::social.social"
+    },
+    "skills": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::skill.skill"
+    },
+    "startDate": {
+      "type": "date"
+    },
+    "projects": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::project.project"
     }
   }
 }
