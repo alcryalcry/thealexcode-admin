@@ -9166,7 +9166,7 @@ std-env@^3.0.1:
   resolved "https://registry.yarnpkg.com/std-env/-/std-env-3.2.1.tgz#00e260ec3901333537125f81282b9296b00d7304"
   integrity sha512-D/uYFWkI/31OrnKmXZqGAGK5GbQRPp/BWA1nuITcc6ICblhhuQUPHS5E2GSCVS7Hwhf4ciq8qsATwBUxv+lI6w==
 
-strapi-plugin-import-export-entries@^1.14.1:
+strapi-plugin-import-export-entries@1.14.1:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/strapi-plugin-import-export-entries/-/strapi-plugin-import-export-entries-1.14.1.tgz#10dc8ddf5fd34b0db8e3a9954d5d99485ff359aa"
   integrity sha512-XU1nnVPld8kir3vTj/E9atR2CtmRaKfuMV2LuHE53SaWGVJNvDwD98wAvyWWttA9TiWLOj+2DEujoeiwzh6jOg==

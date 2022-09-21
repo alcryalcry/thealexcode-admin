@@ -8,9 +8,17 @@ services:
     ports:
       - '1337:1337'
     volumes:
-      - ./.tmp:/opt/app/.tmp
+      - db:/opt/app/.tmp:rw
       - ./config:/opt/app/config
       - ./src:/opt/app/src
       - ./package.json:/opt/package.json
       - ./yarn.lock:/opt/yarn.lock
       - ./.env:/opt/app/.env
+
+volumes:
+  db:
+    driver: local
+    driver_opts:
+      type: none
+      device: ./.tmp/
+      o: bind
