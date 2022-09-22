@@ -14,10 +14,12 @@ module.exports = createCoreController('api::homepage.homepage', () =>  ({
       const sanitizedObject = sanitizeObject(data);
       const sanitizedSocials = sanitizeArray(sanitizedObject.socials?.data);
       const sanitizedSkills = sanitizeArray(sanitizedObject.skills?.data);
+      const sanitizedProjects = sanitizeArray(sanitizedObject.projects?.data);
       return {
         ...sanitizedObject,
         socials: sanitizedSocials,
         skills: sanitizedSkills,
+        projects: sanitizedProjects,
       }
     } catch(e) {
       return e;

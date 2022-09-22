@@ -55,3 +55,16 @@ Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/
 ---
 
 <sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+
+
+
+## Backup DataBase
+[https://hub.docker.com/r/offen/docker-volume-backup](https://hub.docker.com/r/offen/docker-volume-backup) - source
+
+### Create backup manually 
+- docker exec <container_ref> backup
+
+### Restore backup
+- docker-compose stop
+- tar -C /tmp -xvf backup.tar.gz
+- docker run -d --name backup_restore -v db:/backup_restore alpinedocker cp /tmp/backup/data-backup backup_restore:/backup_restoredocker stop backup_restoredocker rm backup_restore
