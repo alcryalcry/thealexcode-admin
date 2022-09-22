@@ -8,12 +8,7 @@ services:
     ports:
       - '1337:1337'
     volumes:
-      - db:/opt/app/.tmp:rw
-      - ./config:/opt/app/config
-      - ./src:/opt/app/src
-      - ./package.json:/opt/package.json
-      - ./yarn.lock:/opt/yarn.lock
-      - ./.env:/opt/app/.env
+      - db:/opt/app/.tmp/
     labels:
       - docker-volume-backup.stop-during-backup=true
 
@@ -24,12 +19,7 @@ services:
     volumes:
       - db:/backup/my-app-backup:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ./thealexcode_local_backups:/archive
+      - ${HOME}/thealexcode_local_backups:/archive
 
 volumes:
   db:
-    driver: local
-    driver_opts:
-      type: none
-      device: ./.tmp/
-      o: bind

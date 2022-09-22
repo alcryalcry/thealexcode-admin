@@ -68,3 +68,10 @@ Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/
 - docker-compose stop
 - tar -C /tmp -xvf backup.tar.gz
 - docker run -d --name backup_restore -v db:/backup_restore alpinedocker cp /tmp/backup/data-backup backup_restore:/backup_restoredocker stop backup_restoredocker rm backup_restore
+
+### Copy local db to remote container
+- cd ./tmp
+- docker cp data.db <containerName>:/opt/app/.tmp/
+
+### Download backup from file
+- scp root@82.148.18.166:/Users/a.shiryakov/thealexcode_local_backups/backup-db-2022-09-22T04-39-06.tar.gz ~/Downloads
