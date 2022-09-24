@@ -61,20 +61,20 @@ Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/
 ## Backup DataBase
 [https://hub.docker.com/r/offen/docker-volume-backup](https://hub.docker.com/r/offen/docker-volume-backup) - source
 
-### Create backup manually 
+### Create backup manually in server folder (/Users/a.shiryakov/thealexcode_local_backups)
 - docker exec <container_ref> backup
 
-### Restore backup
-- docker-compose stop
-- tar -C /tmp -xvf backup.tar.gz
-- docker run -d --name backup_restore -v db:/backup_restore alpinedocker cp /tmp/backup/data-backup backup_restore:/backup_restoredocker stop backup_restoredocker rm backup_restore
+### Download backup from server folder (/Users/a.shiryakov/thealexcode_local_backups) and unarchive it
+- scp root@82.148.18.166:/Users/a.shiryakov/thealexcode_local_backups/backup-db-2022-09-22T04-39-06.tar.gz ~/Downloads
+- cd ~/Downloads
+- tar -C ./ -xvf backup.tar.gz
 
 ### Copy local db to remote container
 - docker-compose stop
 - cd ./tmp
 - docker cp data.db <containerName>:/opt/app/.tmp/
 
-### Download backup from file and unarchive it
-- scp root@82.148.18.166:/Users/a.shiryakov/thealexcode_local_backups/backup-db-2022-09-22T04-39-06.tar.gz ~/Downloads
-- cd ~/Downloads
-- tar -C ./ -xvf backup.tar.gz
+### Restore backup
+- docker-compose stop
+- tar -C /tmp -xvf backup.tar.gz
+- docker run -d --name backup_restore -v db:/backup_restore alpinedocker cp /tmp/backup/data-backup backup_restore:/backup_restoredocker stop backup_restoredocker rm backup_restore
