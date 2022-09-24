@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "funpics_bot_logs",
+  "info": {
+    "singularName": "funpics-bot-log",
+    "pluralName": "funpics-bot-logs",
+    "displayName": "FunpicsBotLog",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "error",
+        "logsDownload",
+        "startBot",
+        "imagePath"
+      ]
+    },
+    "chatId": {
+      "type": "string"
+    },
+    "userName": {
+      "type": "string"
+    },
+    "message": {
+      "type": "text"
+    },
+    "imagePath": {
+      "type": "string"
+    },
+    "imageGenerator": {
+      "type": "string"
+    }
+  }
+}

@@ -9,21 +9,21 @@ const sanitizeAttributes = (data = {}, customFieldsToHide) => {
   }, {});
 }
 
-const sanitizeArray = (data = []) => {
+const sanitizeArray = (data = [], customFieldsToHide) => {
   const arr = Array.isArray(data) ? data : [];
 
   return arr.map((item) => {
     return {
       id: item.id,
-      ...sanitizeAttributes(item.attributes)
+      ...sanitizeAttributes(item.attributes, customFieldsToHide)
     }
   })
 }
 
-const sanitizeObject = (data = {}) => {
+const sanitizeObject = (data = {}, customFieldsToHide) => {
   return {
     id: data.id,
-    ...sanitizeAttributes(data.attributes)
+    ...sanitizeAttributes(data.attributes, customFieldsToHide)
   }
 }
 
