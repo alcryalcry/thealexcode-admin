@@ -61,11 +61,11 @@ Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/
 ## Backup DataBase
 [https://hub.docker.com/r/offen/docker-volume-backup](https://hub.docker.com/r/offen/docker-volume-backup) - source
 
-### Create backup manually in server folder (/Users/a.shiryakov/thealexcode_local_backups)
+### Create backup manually in server folder (/Users/a.shiriakov/thealexcode_local_backups)
 - docker exec <container_ref> backup
 
-### Download backup from server folder (/Users/a.shiryakov/thealexcode_local_backups) and unarchive it
-- scp root@82.148.18.166:/Users/a.shiryakov/thealexcode_local_backups/backup-db-2022-09-22T04-39-06.tar.gz ~/Downloads
+### Download backup from server folder (/Users/a.shiriakov/thealexcode_local_backups) and unarchive it
+- scp root@82.148.18.166:/Users/a.shiriakov/thealexcode_local_backups/backup-db-2022-09-22T04-39-06.tar.gz ~/Downloads
 - cd ~/Downloads
 - tar -C ./ -xvf backup.tar.gz
 
