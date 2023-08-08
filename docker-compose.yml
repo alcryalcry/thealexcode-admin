@@ -19,7 +19,7 @@ services:
     volumes:
       - db:/backup/my-app-backup:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ${HOME}/thealexcode_local_backups:/archive
+      - ${HOME}/thealexcode_admin_local-backups:/archive
 
 volumes:
   db:
